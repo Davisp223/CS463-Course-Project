@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA Encryption Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            margin-top: 10px;
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section:nth-child(odd) {
+            background-color: #e9f7e9;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+
+        .copy-button {
+            background-color: #008CBA;
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .copy-button:hover {
+            background-color: #006F8E;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RSA Encryption Tool</h1>
+
+        <!-- Key Generation -->
+        <div class="section">
+            <h2>Key Generation</h2>
+            <button onclick="generateKeys()">Generate Keys</button>
+            <div>
+                <h3>Public Key:</h3>
+                <pre id="public-key"></pre>
+                <button class="copy-button" onclick="copyToClipboard('public-key')">Copy Public Key</button>
+            </div>
+            <div>
+                <h3>Private Key:</h3>
+                <pre id="private-key"></pre>
+                <button class="copy-button" onclick="copyToClipboard('private-key')">Copy Private Key</button>
+            </div>
+        </div>
+
+        <!-- Encryption -->
+        <div class="section">
+            <h2>Encrypt Text</h2>
+            <textarea id="plaintext" placeholder="Enter text to encrypt"></textarea><br>
+            <button onclick="encryptText()">Encrypt</button>
+            <div>
+                <h3>Encrypted Text:</h3>
+                <pre id="encrypted-text"></pre>
+                <button class="copy-button" onclick="copyToClipboard('encrypted-text')">Copy Encrypted Text</button>
+            </div>
+        </div>
+
+        <!-- Decryption -->
+        <div class="section">
+            <h2>Decrypt Text</h2>
+            <textarea id="ciphertext" placeholder="Enter ciphertext to decrypt"></textarea><br>
+            <button onclick="decryptText()">Decrypt</button>
+            <div>
+                <h3>Decrypted Text:</h3>
+                <pre id="decrypted-text"></pre>
+                <button class="copy-button" onclick="copyToClipboard('decrypted-text')">Copy Decrypted Text</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Davis Plude</p>
+        </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>
